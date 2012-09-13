@@ -15,7 +15,7 @@
 # limitations under the License.
 
 VENDOR=lge
-DEVICE=p350
+DEVICE=c660
 
 mkdir -p ../../../vendor/$VENDOR/$DEVICE
 

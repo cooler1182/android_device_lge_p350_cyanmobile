@@ -14,7 +14,6 @@ on boot
     chown bluetooth bluetooth /proc/bluetooth/sleep/proto
     chmod 0660 /sys/class/rfkill/rfkill0/state
     chmod 0660 /sys/class/rfkill/rfkill0/type
-    chmod 0666 /dev/graphics/fb0
 
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
@@ -30,6 +29,7 @@ on boot
 
     setprop persist.sys.gmaps_hack 1
     setprop ro.squadzone.build 1
+
 
 ## ERS
     mkdir /data/data/com.lge.ers
@@ -115,23 +115,6 @@ service gadget_id /system/bin/gadget_id
     disabled
     oneshot
 
-service toggleshutter /system/bin/toggleshutter
-    user root
-    group root
-    oneshot
-	
-on property:ro.camera.sound.disabled=0
-    start toggleshutter
-	
-on property:ro.camera.sound.disabled=1
-    start toggleshutter
-
-on property:persist.sys.camera-mute=0
-    start toggleshutter
-
-on property:persist.sys.camera-mute=1
-    start toggleshutter
-
 service cnd /system/bin/cnd
     socket cnd stream 660 root radio
     socket cne stream 660 root radio
@@ -150,16 +133,3 @@ on property:net.usb_tethering=0
 
 on property:dev.bootcomplete=1
     exec /system/bin/hwaddrs
-
-# bugreport is triggered by holding down the KEY_VOLUMEUP and KEY_HOME keycodes
-service bugreport /system/bin/dumpstate -d -v -o /sdcard/bugreports/bugreport
-    disabled
-    oneshot
-    keycodes 115 102
-
-# reboot is triggered by holding down the KEY_VOLUMEDOWN and KEY_POWER keycodes
-service reboot_key /system/bin/reboot
-    user system
-    oneshot
-    keycodes 114 107
-    disabled

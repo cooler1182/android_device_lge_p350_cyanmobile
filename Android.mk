@@ -6,7 +6,7 @@
 	#$(LOCAL_PATH)/libaudio/Android.mk \
 #        $(LOCAL_PATH)/brcm_patchram_plus/Android.mk
    # include $(subdir_makefiles)
-  #include $(call all-named-subdir-makefiles, libaudio libcamera)
+  #include $(call all-named-subdir-makefiles, libaudio libcamera bdaddr_read gadget_id camerashutter)
 
 #endif
 ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),p350)
