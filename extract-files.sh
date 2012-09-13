@@ -26,8 +26,8 @@ mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/etc/firmware
 mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/usr/keychars
 
 # Sensors
-adb pull /system/lib/hw/sensors.pecan.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/lib/hw
-adb pull /system/lib/hw/lights.pecan.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/lib/hw
+adb pull /system/lib/hw/sensors.p350.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/lib/hw
+adb pull /system/lib/hw/lights.p350.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/lib/hw
 adb pull /system/bin/ami304d ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/bin
 
 # 3D
@@ -42,7 +42,7 @@ adb pull /system/etc/firmware/yamato_pm4.fw ../../../vendor/$MANUFACTURER/$DEVIC
 
 #2D
 adb pull /system/lib/hw/gralloc.default.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/lib/hw/gralloc.default.so
-adb pull /system/lib/hw/gralloc.pecan.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/lib/hw/gralloc.pecan.so
+adb pull /system/lib/hw/gralloc.p350.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/lib/hw/gralloc.p350.so
 
 # Camera
 adb pull /system/lib/liboemcamera.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/lib
@@ -57,7 +57,7 @@ adb pull /system/etc/wl/rtecdc-mfgtest.bin ../../../vendor/$MANUFACTURER/$DEVICE
 
 # Audio
 adb pull /system/lib/liba2dp.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/lib
-adb pull /system/lib/libaudioeq.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/lib
+
 
 # LGE services
 adb pull /system/bin/qmuxd ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/bin
